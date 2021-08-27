@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1629345818 source:c:\users\novak\desktop\trabalhotec\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
