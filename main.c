@@ -315,7 +315,7 @@ Mt **traduzirMt(Mt **maquinaRecebida, int *tam, Mt **maquinaInicial, char **esta
                         j++;
                     }
                 } else { //aqui é lendo branco e escrevendo qualquer outra coisa q n seja branco
-                    if(maquinaRecebida[i]->direction == '*') { //lendo branco, escrevendo branco com simbolo estacionario
+                    if(maquinaRecebida[i]->direction == '*') { //lendo branco, escrevendo qualquer coisa com simbolo estacionario
                         maquinaSaida = realloc(maquinaSaida, sizeof(Mt)*tam[1]);
                         j=tam[1]-1;
                         maquinaSaida[j] = malloc(sizeof(Mt));
@@ -353,7 +353,7 @@ Mt **traduzirMt(Mt **maquinaRecebida, int *tam, Mt **maquinaInicial, char **esta
                         }
 
                         limparString(novoEstado);
-                    } else if(maquinaRecebida[i]->direction == 'l') {//mesmo esquema, lendo branco, escrevendo qualquer coisa, e indo pra esquerda
+                    } else if(maquinaRecebida[i]->direction[0] == 'l') {//mesmo esquema, lendo branco, escrevendo qualquer coisa, e indo pra esquerda
                         maquinaSaida = realloc(maquinaSaida, sizeof(Mt)*tam[1]);
                         j=tam[1]-1;
                         maquinaSaida[j] = malloc(sizeof(Mt));
@@ -1073,7 +1073,6 @@ char **acharTodosOsSimbolos(Mt **maquinaRecebida, int *tam) { //aqui acha todos 
             tam[3]++;
         }
     }
-    tam[3]--;
     return string;
 }
 
